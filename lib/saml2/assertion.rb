@@ -56,7 +56,7 @@ module SAML2
       ) do |assertion|
         super(assertion)
 
-        subject.build(assertion)
+        subject.build(assertion) if subject
 
         conditions.build(assertion) if conditions
 
