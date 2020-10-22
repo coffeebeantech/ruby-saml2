@@ -110,6 +110,9 @@ module SAML2
     # @param algorithm_name [Symbol]
     # @return [self]
     def sign(x509_certificate, private_key, algorithm_name = :sha256)
+      # make sure we no longer pretty print this object
+      @pretty = false
+
       to_xml
 
       xml = @document.root

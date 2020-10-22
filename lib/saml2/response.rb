@@ -256,19 +256,6 @@ module SAML2
       @assertions
     end
 
-    # (see Signable#sign)
-    # Signs each assertion.
-    def sign(x509_certificate, private_key, algorithm_name = :sha256)
-      # make sure we no longer pretty print this object
-      @pretty = false
-
-      # if there are no assertions (encrypted?), just sign the response itself
-      return super if assertions.empty?
-
-      assertions.each { |assertion| assertion.sign(x509_certificate, private_key, algorithm_name) }
-      self
-    end
-
     private
 
     def build(builder)
