@@ -3,3 +3,8 @@
 /Gemfile.lock
 /doc/
 /pkg/
+
+# rvm files
+.ruby-gemset
+.ruby-version
+
